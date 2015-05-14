@@ -1,0 +1,141 @@
+<div class="row" ng-controller="GeneralInformationController">
+
+    <div class="col-md-12">
+        <div class="alert alert-info" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            Please complete form below based on available information.
+            Click on applicable tabs above to enter additional information related to the incident.
+            When complete click 'REVIEW and SUBMIT' tab above.
+        </div>
+    </div>
+
+    <form name="generalInfo" class="form-horizontal">
+        <div class="col-xs-12 col-md-6">
+            <div class="form-group">
+                <label class="col-sm-5 control-label">* Date and Time of Incident:</label>
+                <div class="col-sm-7">
+                    <input type="email"
+                           name="datetime"
+                           ng-model="incident.datetime"
+                           class="form-control"
+                           placeholder="Email">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-5 control-label">* Reported By:</label>
+                <div class="col-sm-7">
+                    <input type="text"
+                           name="reportedBy"
+                           ng-model="incident.reportedBy"
+                           class="form-control"
+                           placeholder="First Name Last Name">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-5 control-label">* Company of Reporter:</label>
+                <div class="col-sm-7">
+                    <select name="companyOfReporter"
+                            ng-model="incident.companyOfReporter"
+                            ng-options="company.id as company.name for company in companies"
+                            class="form-control">
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-5 control-label">* Contact Number:</label>
+                <div class="col-sm-7">
+                    <input type="text"
+                           name="contactNumber"
+                           ng-model="incident.contactNumber"
+                           class="form-control"
+                           placeholder="Contact Number">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-5 control-label">Supervisor Name:</label>
+                <div class="col-sm-7">
+                    <input type="email"
+                           name="datetime"
+                           ng-model="incident.datetime"
+                           class="form-control"
+                           placeholder="Supervisor Name">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-5 control-label">* High Level Description of Incident:</label>
+                <div class="col-sm-7">
+                    <textarea name="description"
+                              ng-model="incident.description"
+                              class="form-control">
+                    </textarea>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+            <div class="form-group">
+                <div class="col-sm-7 col-sm-offset-5 text-center">
+                    Well Information:
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-5 control-label">* Well Number:</label>
+                <div class="col-sm-7">
+                    <select name="wellNumber"
+                            ng-options="number.id as number.name for number in wellNumbers"
+                            class="form-control"
+                            ng-model="incident.wellNumber">
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-5 control-label">Region:</label>
+                <div class="col-sm-7">
+                    <input type="text"
+                           class="form-control"
+                           name="region"
+                           ng-model="incident.region"
+                           placeholder="Region">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-5 control-label">State:</label>
+                <div class="col-sm-7">
+                    <input type="password"
+                           class="form-control"
+                           name="state"
+                           ng-model="incident.state"
+                           placeholder="State">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-5 control-label">Field Office:</label>
+                <div class="col-sm-7">
+                    <input type="text"
+                           class="form-control"
+                           name="fieldOffice"
+                           ng-model="incident.fieldOffice"
+                           placeholder="Field Office">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-5 control-label">* Incident Severity(Check all that Apply):</label>
+                <div class="col-sm-7">
+                    <input type="password"
+                           class="form-control"
+                           placeholder="Password">
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>
