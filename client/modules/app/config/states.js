@@ -17,25 +17,38 @@
 		});
 
 		$stateProvider
-			.state('general_information', {
-				url: '^/general_information',
+			.state('tabset', {
+				url: '/',
+				views: {
+					tabset: {templateUrl: '/modules/app/views/tabset.html'}
+				}
+			})
+			.state('tabset.general_information', {
+				url: 'general_information',
 				controller: 'GeneralInformationController',
 				views: {
 					'generalInformation': {templateUrl: '/modules/app/views/general-information.html'}
 				}
 			})
-			.state('corrective_actions', {
-				url: '^/corrective_actions',
+			.state('tabset.corrective_actions', {
+				url: 'corrective_actions',
 				controller: 'CorrectiveActionsController',
 				views: {
 					'correctiveActions': {templateUrl: '/modules/app/views/corrective-actions.html'}
 				}
 			})
-			.state('review_submit', {
-				url: '^/review_submit',
+			.state('tabset.review_submit', {
+				url: 'review_submit',
 				controller: 'ReviewSubmitController',
 				views: {
 					'reviewSubmit': {templateUrl: '/modules/app/views/review-submit.html'}
+				}
+			})
+			.state('view_report', {
+				url: '^/report/view',
+				controller: 'ReportController',
+				views: {
+					'reportView': {templateUrl: '/modules/app/views/report-view.html'}
 				}
 			});
 	}

@@ -1,1 +1,52 @@
-rev
+<div class="row" ng-controller="ReviewSubmitController">
+
+    <div class="col-md-9">
+        <div class="alert alert-info" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            Please review all the incident information and click "Submit" to send the report to the company.
+            If you want to change something - return to the Incident Form.
+        </div>
+    </div>
+    <div class="col-md-3 text-right btn-md">
+        <button class="btn btn-success" ng-click="submit()" ng-disabled="formValid">
+            <strong>Submit</strong>
+        </button>
+    </div>
+
+    <!-- Incident review -->
+    <div class="col-md-12 h3">
+        General Information:
+    </div>
+
+    <div class="review-general col-md-12">
+        <div class="col-md-12"
+             ng-class="{'is-invalid': field.invalid}"
+             ng-repeat="field in generalInformation">
+            <div class="col-md-6 text-right text-strong">{{field.label}}:</div>
+            <div class="col-md-6">{{field.val}}</div>
+        </div>
+    </div>
+
+    <!-- Immediate Corrective Action(s) -->
+    <div class="col-md-12 h3">
+        Immediate Corrective Action(s):
+    </div>
+
+    <div class="review-general col-md-12">
+        <div class="col-md-12"
+             ng-repeat="action in correctiveActions">
+            <div class="col-md-6 text-right text-strong">Description of Corrective Action({{$index + 1}}):</div>
+            <div class="col-md-6">{{action.description}}</div>
+
+            <div class="col-md-6 text-right text-strong">Action Taken By (name)({{$index + 1}}):</div>
+            <div class="col-md-6">{{action.actionBy}}</div>
+
+            <div class="col-md-6 text-right text-strong">Company({{$index + 1}}):</div>
+            <div class="col-md-6">{{action.company}}</div>
+
+            <div class="col-md-6 text-right text-strong">Date({{$index + 1}}):</div>
+            <div class="col-md-6">{{action.date | date: 'MM/dd/yyyy'}}</div>
+        </div>
+    </div>
+
+</div>

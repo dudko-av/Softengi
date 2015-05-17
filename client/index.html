@@ -36,8 +36,8 @@
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
@@ -45,17 +45,8 @@
 
     <div class="container">
 
-        <tabset justified="true">
-            <tab heading="General Information">
-                <div ui-view="generalInformation"></div>
-            </tab>
-            <tab heading="Corrective Actions">
-                <div ui-view="correctiveActions" tab-href=""></div>
-            </tab>
-            <tab heading="REVIEW and SUBMIT">
-                <div ui-view="reviewSubmit"></div>
-            </tab>
-        </tabset>
+        <div ui-view="tabset"></div>
+        <div ui-view="reportView"></div>
 
     </div><!-- /.container -->
 
@@ -69,15 +60,22 @@
 <script src="/bower_components/angular-bootstrap/ui-bootstrap.js"></script>
 <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="/bower_components/angular-animate/angular-animate.js"></script>
 <!-- Angular modules -->
 <script src="/modules/app/app.module.js"></script>
 <!-- Configuration files -->
 <script src="/modules/app/config/states.js"></script>
 <!-- controllers -->
 <script src="/modules/app/controllers/GeneralInformationController.js"></script>
+<script src="/modules/app/controllers/CorrectiveActionsController.js"></script>
+<script src="/modules/app/controllers/ReviewSubmitController.js"></script>
+<script src="/modules/app/controllers/ModalInstanceController.js"></script>
+<script src="/modules/app/controllers/ReportController.js"></script>
 <!-- services -->
+<script src="/modules/app/services/dataService.js"></script>
+<script src="/modules/app/services/localDataStorage.js"></script>
 <!-- directives -->
-<script src="/modules/app/directives/tab-href.js"></script>
+<script src="/modules/app/directives/tab-active.js"></script>
 
 <!-- endbuild -->
 

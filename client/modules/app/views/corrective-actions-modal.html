@@ -1,0 +1,54 @@
+<div class="modal-header">
+    <h3 class="modal-title">{{record.hasOwnProperty('id') ? 'Edit' : 'New'}}  Record</h3>
+</div>
+<div class="modal-body clearfix">
+    <form name="actions">
+        <div class="form-group" ng-class="validation(actions.description)">
+            <label>Description of Corrective Action *</label>
+            <textarea class="form-control"
+                      name="description"
+                      ng-required="true"
+                      ng-model="record.description"></textarea>
+        </div>
+        <div class="form-group" ng-class="validation(actions.actionBy)">
+            <label>Action Taken By (name) *</label>
+            <input type="text"
+                   class="form-control"
+                   name="actionBy"
+                   ng-required="true"
+                   ng-model="record.actionBy">
+        </div>
+        <div class="form-group" ng-class="validation(actions.company)">
+            <label>Company *</label>
+            <select name="company"
+                    ng-model="record.company"
+                    ng-options="company.name as company.name for company in companies"
+                    ng-required="true"
+                    class="form-control">
+            </select>
+        </div>
+        <div class="form-group" ng-class="validation(actions.date)">
+            <label>Date *</label>
+            <div class="input-group">
+                <input type="text"
+                       class="form-control"
+                       datepicker-popup="MM/dd/yyyy"
+                       ng-model="record.date"
+                       ng-required="true"
+                       is-open="opened"
+                       show-button-bar="false"
+                       name="date"
+                       close-on-date-selection="true">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="openDatepicker($event)">
+                            <i class="glyphicon glyphicon-calendar"></i>
+                        </button>
+                    </span>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="submit" class="btn btn-primary" ng-click="ok()">OK</button>
+    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</div>

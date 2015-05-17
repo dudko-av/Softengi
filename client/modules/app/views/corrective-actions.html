@@ -1,1 +1,48 @@
-corr
+<div ng-controller="CorrectiveActionsController">
+
+    <div class="alert alert-info" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        Please complete the table below
+    </div>
+
+    <div class="page-header">
+        <div class="h3">
+            Immediate Corrective Action(s) <small>({{correctiveActions.length}} of {{maxRecords}} available)</small>
+        </div>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td><strong>Description of Corrective Action *</strong></td>
+                <td><strong>Action Taken By (name) *</strong></td>
+                <td><strong>Company *</strong></td>
+                <td><strong>Date *</strong></td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="record in correctiveActions">
+                <td>{{record.description}}</td>
+                <td>{{record.actionBy}}</td>
+                <td>{{record.company}}</td>
+                <td>{{record.date | date: 'MM/dd/yyyy'}}</td>
+                <td class="record-actions">
+                    <span class="glyphicon glyphicon-edit" aria-hidden="true" ng-click="edit(record)"></span>
+                    <span class="glyphicon glyphicon-remove text-danger"
+                          ng-hide="correctiveActions.length == 1"
+                          aria-hidden="true"
+                          ng-click="delete(record)"></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p class="text-center" ng-hide="correctiveActions.length == maxRecords">
+        <button class="btn btn-success" ng-click="create()">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            <strong>Add Record</strong>
+        </button>
+    </p>
+
+</div>

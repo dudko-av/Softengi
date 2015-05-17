@@ -1,0 +1,16 @@
+<div class="container page report" ng-controller="ReportController">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="page-header h3">
+                {{report.workflowCreationInformation.workflowTypeName}} ({{report.workflowCreationInformation.name}})
+                <small>{{report.workflowStepUpdateInformation.stepIdOrName}}</small>
+            </div>
+        </div>
+        <div class="col-md-12 review-general">
+            <div class="col-md-12" ng-repeat="field in report.workflowStepUpdateInformation.fields">
+                <div class="col-xs-12 col-md-4 text-strong text-right">{{field.name}}:</div>
+                <div class="col-xs-12 col-md-8">{{render(field.values)}}</div>
+            </div>
+        </div>
+    </div>
+</div>

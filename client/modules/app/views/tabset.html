@@ -1,0 +1,21 @@
+<tabset justified="true" class="tab-container">
+    <tab heading="General Information"
+         tab-active
+         active="tabActive['general_information']"
+         ui-sref="tabset.general_information">
+        <div ui-view="generalInformation">
+        </div>
+    </tab>
+    <tab heading="Corrective Actions"
+         tab-active
+         active="tabActive['corrective_actions']"
+         ui-sref="tabset.corrective_actions">
+        <div ui-view="correctiveActions"></div>
+    </tab>
+    <tab heading="REVIEW and SUBMIT"
+         tab-active
+         active="tabActive['review_submit']"
+         ui-sref="tabset.review_submit">
+        <div ui-view="reviewSubmit"></div>
+    </tab>
+</tabset>
