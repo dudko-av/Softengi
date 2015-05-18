@@ -93,8 +93,9 @@
 
 		function submit () {
 			dataService.initIncidentInstance();
+			debugger;
 			$window.open('/report/view');
-			//debugger;
+			debugger;
 		}
 	}
 
