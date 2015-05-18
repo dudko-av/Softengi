@@ -3,8 +3,7 @@
 
 	angular.module('app', [
 		'ui.bootstrap',
-		'ui.router',
-		'ngAnimate'
+		'ui.router'
 	]);
 
 })();

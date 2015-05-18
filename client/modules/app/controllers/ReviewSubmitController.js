@@ -8,9 +8,9 @@
 		.module('app')
 		.controller('ReviewSubmitController', ReviewSubmitController);
 
-	ReviewSubmitController.$inject = ['$scope', 'dataService'];
+	ReviewSubmitController.$inject = ['$window', '$scope', 'dataService'];
 
-	function ReviewSubmitController ($scope, dataService) {
+	function ReviewSubmitController ($window, $scope, dataService) {
 		var generalInfo = dataService.restoreData('generalInfo');
 		$scope.correctiveActions = dataService.getCorrectiveActions();
 		$scope.formValid = generalInfo ? generalInfo.$invalid : true;
@@ -93,6 +93,7 @@
 
 		function submit () {
 			dataService.initIncidentInstance();
+			$window.open('/report/view');
 			//debugger;
 		}
 	}
